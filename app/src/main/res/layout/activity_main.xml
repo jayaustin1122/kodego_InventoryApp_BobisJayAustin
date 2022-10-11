@@ -4,19 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainbackground"
+    android:background="@drawable/mainbg"
     tools:context=".MainActivity">
-
 
     <TextView
         android:id="@+id/textSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="150dp"
+        android:layout_marginTop="175dp"
         android:gravity="center"
         android:text="Sign in"
         android:textColor="@color/white"
-        android:textSize="35dp"
+        android:textSize="45dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,35 +44,36 @@
         android:drawableLeft="@drawable/ic_baseline_lock_24"
         android:drawablePadding="20dp"
         android:hint="Password"
+        android:inputType="textPassword"
         android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/etUsername"
-        tools:layout_editor_absoluteX="10dp"
-        android:inputType="textPassword"/>
+        tools:layout_editor_absoluteX="10dp" />
 
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btSignIn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:backgroundTint="@color/teal_200"
         android:text="Sign In"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword"/>
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <TextView
+        android:id="@+id/textForgotpassWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textForgotpassWord"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btSignIn"
+        android:layout_margin="20dp"
         android:text="Forgot Password?"
         android:textColor="@color/white"
-        android:layout_margin="20dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btSignIn" />
 
     <TextView
         android:id="@+id/others"
@@ -83,39 +83,45 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/icons"/>
+        app:layout_constraintTop_toTopOf="@+id/icons" />
 
     <LinearLayout
         android:id="@+id/icons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="60dp"
         android:gravity="center"
-        tools:layout_editor_absoluteX="0"
-        tools:layout_editor_absoluteY="683dp"
         app:layout_constraintTop_toBottomOf="@+id/textForgotpassWord"
-        android:layout_margin="60dp">
+        tools:layout_editor_absoluteX="0"
+        tools:layout_editor_absoluteY="683dp">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/googlelogo"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/google_logo"
             android:gravity="bottom"
-            android:src="@drawable/google_logo"
-            android:layout_margin="20dp"/>
-        <ImageView
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
             android:id="@+id/facebooklogo"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/facebook_logo"
             android:gravity="bottom"
-            android:src="@drawable/facebook_logo"
-            android:layout_margin="20dp"/>
-        <ImageView
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
             android:id="@+id/twitterlogo"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/twitter_logo"
             android:gravity="bottom"
-            android:src="@drawable/twitter_logo"
-            android:layout_margin="20dp"/>
+            tools:ignore="SpeakableTextPresentCheck" />
+
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
