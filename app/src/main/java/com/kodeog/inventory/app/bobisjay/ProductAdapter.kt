@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kodeog.inventory.app.bobisjay.databinding.RowItemBinding
 
 class ProductAdapter (val products:List<Products>):RecyclerView.Adapter<ProductAdapter.ProductViewHolder>(){
+    // to pass a setonclicklistener to the Home page.
+    //lambda sample
+    var onItemClick : ((Products)-> Unit)? = null
     inner class ProductViewHolder(val binding:RowItemBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
@@ -19,6 +22,10 @@ class ProductAdapter (val products:List<Products>):RecyclerView.Adapter<ProductA
             imageItem.setImageResource(products[position].imageItem)
             textItemName.text = products[position].itemName
             textItemDescription.text = products[position].itemDescription
+        }
+        // to make the viewcard functional
+        holder.itemView.setOnClickListener(){
+            onItemClick?.invoke(products[position])
         }
     }
 

@@ -3,43 +3,59 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:padding="5dp">
-
-
-    <TextView
-        android:id="@+id/textItemName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Item Name"
-        android:layout_marginStart="10dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textStyle="bold"
-        android:padding="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageItem"
-        app:layout_constraintTop_toTopOf="@+id/imageItem" />
-
-    <TextView
-        android:id="@+id/textItemDescription"
-        android:layout_width="0dp"
+    android:layout_height="80dp"
+    android:paddingBottom="5dp">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:padding="5dp"
-        android:layout_marginStart="10dp"
-        android:hint="Item Description"
+        android:layout_marginTop="2dp"
+        app:cardCornerRadius="20dp"
+        android:backgroundTint="@color/Mildtrans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageItem"
-        app:layout_constraintTop_toBottomOf="@+id/textItemName" />
-
-    <ImageView
-        android:id="@+id/imageItem"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/fulltrans">
+            <ImageView android:id="@+id/imageItem"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/fulltrans"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView android:id="@+id/textItemDescription"
+                android:layout_width="331dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="5dp"
+                android:hint="Item Description"
+                android:background="@color/fulltrans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageItem"
+                app:layout_constraintTop_toBottomOf="@+id/textItemName" />
+            <TextView
+                android:id="@+id/textItemName"
+                android:layout_width="331dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:hint="Item Name"
+                android:textSize="15dp"
+                android:background="@color/fulltrans"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageItem"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

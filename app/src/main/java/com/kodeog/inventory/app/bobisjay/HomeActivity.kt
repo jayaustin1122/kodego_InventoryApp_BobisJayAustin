@@ -1,5 +1,6 @@
 package com.kodeog.inventory.app.bobisjay
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -38,8 +39,18 @@ class HomeActivity : AppCompatActivity() {
 
 
 
-            )
+        )
         val adapter = ProductAdapter(productsList)
+
+        //calling onClick here going from productAdapter
+        adapter.onItemClick = {
+            val intent = Intent(this, ProductDetailActivity::class.java)
+            intent.putExtra("itemName",it.itemName)
+            intent.putExtra("itemDescription" ,it.itemDescription)
+            intent.putExtra("imageItem",it.imageItem)
+            startActivity(intent)
+        }
+
         binding.myRecyclerView.adapter = adapter
         binding.myRecyclerView.layoutManager = LinearLayoutManager(this)
 

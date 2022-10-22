@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#C5BDBD</color>
     <color name="Mildtrans">#77FFFEFE</color>
+    <color name="fulltrans">#00000000</color>
 </resources>
