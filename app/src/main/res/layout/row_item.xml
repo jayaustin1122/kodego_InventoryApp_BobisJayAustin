@@ -3,56 +3,110 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="120dp"
     android:paddingBottom="5dp">
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="2dp"
-        app:cardCornerRadius="20dp"
         android:backgroundTint="@color/Mildtrans"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/fulltrans">
-            <ImageView android:id="@+id/imageItem"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
+
+            <ImageView
+                android:id="@+id/imageItem"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
                 android:background="@color/fulltrans"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
 
-            <TextView android:id="@+id/textItemDescription"
-                android:layout_width="331dp"
-                android:layout_height="0dp"
+            <TextView
+                android:id="@+id/textItemDescription"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="5dp"
-                android:hint="Item Description"
                 android:background="@color/fulltrans"
+                android:hint="Item Description"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/imageItem"
-                app:layout_constraintTop_toBottomOf="@+id/textItemName" />
+                app:layout_constraintTop_toBottomOf="@+id/textItemNameDisplay"
+                app:layout_constraintVertical_bias="0.0" />
+
             <TextView
-                android:id="@+id/textItemName"
-                android:layout_width="331dp"
+                android:id="@+id/textItemNameDisplay"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:hint="Item Name"
-                android:textSize="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@color/fulltrans"
+                android:hint="Item Name"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"
+                android:textSize="15dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageItem"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textQtyDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Quantity:"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.018"
+                app:layout_constraintStart_toEndOf="@+id/imageItem"
+                app:layout_constraintTop_toBottomOf="@+id/textItemDescription" />
+
+            <TextView
+                android:id="@+id/textQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="--"
+                app:layout_constraintStart_toEndOf="@+id/textQtyDisplay"
+                app:layout_constraintTop_toTopOf="@+id/textQtyDisplay" />
+
+            <ImageButton
+                android:id="@+id/imageBtnDelete"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textItemDescription"
+                app:srcCompat="@drawable/ic_baseline_delete_24"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <ImageButton
+                android:id="@+id/imageBtnEdit"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageBtnDelete"
+                app:layout_constraintTop_toTopOf="@+id/imageBtnDelete"
+                app:srcCompat="@drawable/ic_baseline_edit_24"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -15,9 +15,11 @@ class ProductDetailActivity : AppCompatActivity() {
         var itemName : String? = intent.getStringExtra("itemName")
         var itemDescription : String? = intent.getStringExtra("itemDescription")
         var imageItem : Int = intent.getIntExtra("imageItem",0)
+        var itemQuantity : Int = intent.getIntExtra("itemQuantity",0)
 
-        binding.textItemName.text = itemName
+        binding.textItemNameDisplay.text = itemName
         binding.imageItemProduct.setImageResource(imageItem)
         binding.textItemDescription.text = itemDescription
+        binding.textQuantity.text = itemQuantity.toString()
     }
 }
