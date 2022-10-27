@@ -14,53 +14,41 @@ class TestActivity : AppCompatActivity() {
         binding = ActivityTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //button binding
-        binding.btGetName.setOnClickListener (){
-            var name = binding.etvName.text.toString()
-            binding.txtName.text = name
-            //combining button and spinner.
-            var spinnerItem : String = binding.spinner1.selectedItem.toString()
-            Toast.makeText(applicationContext,spinnerItem,Toast.LENGTH_SHORT).show()
+        //calling all fragments
+        val fragmentOne = FragmentOne()
+        val fragmentTwo = FragmentTwo()
+        val fragmentThree = FragmentThree()
 
+            // to call the initial fragment display in screen
+        supportFragmentManager.beginTransaction().apply {
+            replace(binding.fragmentMain.id,fragmentOne)
+            commit()
         }
-        //binding radio button
-        binding.radioGroup.setOnCheckedChangeListener { radioGroup, checkedOption ->
-            when(checkedOption) {
-                R.id.rd1 -> Toast.makeText(applicationContext,"Option 1 Selected",Toast.LENGTH_SHORT).show()
-                R.id.rd2 -> Toast.makeText(applicationContext,"Option 2 Selected",Toast.LENGTH_SHORT).show()
-                R.id.rd3 -> Toast.makeText(applicationContext,"Option 3 Selected",Toast.LENGTH_SHORT).show()
+        //accessing button 1
+        binding.button.setOnClickListener(){
+            supportFragmentManager.beginTransaction().apply {
+                replace(binding.fragmentMain.id,fragmentOne)
+                // creating a backstack
+                addToBackStack(null)
+                commit()
             }
         }
-        //binding checkbox 1
-        binding.cb1.setOnClickListener {
-            if (binding.cb1.isChecked){
-                Toast.makeText(applicationContext,"Checkbox 1 is checked",Toast.LENGTH_SHORT).show()
-            }
-            else{
-                Toast.makeText(applicationContext,"Checkbox 1 is unchecked",Toast.LENGTH_SHORT).show()
-            }
-        }
-        //binding checkbox 2
-        binding.cb2.setOnClickListener {
-            if (binding.cb2.isChecked) {
-                Toast.makeText(applicationContext, "Checkbox 2 is checked", Toast.LENGTH_SHORT)
-                    .show()
-            } else {
-                Toast.makeText(applicationContext, "Checkbox 2 is unchecked", Toast.LENGTH_SHORT)
-                    .show()
+        //accessing button 2
+        binding.button2.setOnClickListener(){
+            supportFragmentManager.beginTransaction().apply {
+                replace(binding.fragmentMain.id,fragmentTwo)
+                // creating a backstack
+                addToBackStack(null)
+                commit()
             }
         }
-        //Using a Spinner
-        val data = arrayListOf<String>("Option 1","Option 2","Option 3")
-        val adaptorParent = ArrayAdapter(applicationContext,R.layout.textview,data)
-
-        binding.spinner1.adapter = adaptorParent
-
-        binding.switchButton.setOnClickListener {
-            if(binding.switchButton.isChecked){
-                Toast.makeText(applicationContext, "On", Toast.LENGTH_SHORT).show()
-            }else{
-                Toast.makeText(applicationContext, "Off", Toast.LENGTH_SHORT).show()
+        //accessing button 3
+        binding.button3.setOnClickListener(){
+            supportFragmentManager.beginTransaction().apply {
+                replace(binding.fragmentMain.id,fragmentThree)
+                // creating a backstack
+                addToBackStack(null)
+                commit()
             }
         }
     }
