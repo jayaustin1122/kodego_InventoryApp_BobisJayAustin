@@ -14,6 +14,8 @@ class FragmentThree : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentThreeBinding.inflate(layoutInflater)
+        var textfromTestActivity = arguments?.getString("data3")
+        binding.textViewFragment3.text = textfromTestActivity
         // Inflate the layout for this fragment
         return binding.root
     }

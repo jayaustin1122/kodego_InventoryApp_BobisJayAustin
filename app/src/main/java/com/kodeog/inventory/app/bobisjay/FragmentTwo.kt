@@ -15,6 +15,8 @@ class FragmentTwo : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentTwoBinding.inflate(layoutInflater)
+        var textfromTestActivity = arguments?.getString("data2")
+        binding.textViewFragment2.text = textfromTestActivity
         // Inflate the layout for this fragment
         return binding.root
     }

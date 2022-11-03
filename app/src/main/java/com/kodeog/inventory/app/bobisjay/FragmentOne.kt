@@ -15,6 +15,10 @@ class FragmentOne : Fragment() {
     ): View? {
         //binding fragment
         binding = FragmentOneBinding.inflate(layoutInflater)
+
+        //paasing data to 1st fragment
+        var textfromTestActivity = arguments?.getString("data1")
+        binding.textViewFragment1.text = textfromTestActivity
         // Inflate the layout for this fragment
         return binding.root
     }
