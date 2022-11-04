@@ -37,7 +37,7 @@ class TestActivity : AppCompatActivity() {
         fragmentTwo.arguments = bundle2
 
         var bundle3 = Bundle()
-        bundle3.putString("data3",myData3)
+        bundle3 .putString("data3",myData3)
         fragmentThree.arguments = bundle3
         // to call the initial fragment display in screen
         supportFragmentManager.beginTransaction().apply {
