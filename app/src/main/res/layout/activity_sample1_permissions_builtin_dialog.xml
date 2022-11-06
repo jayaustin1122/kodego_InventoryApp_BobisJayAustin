@@ -6,30 +6,87 @@
     android:layout_height="match_parent"
     tools:context=".sample1PermissionsBuiltinDialog">
 
+    <FrameLayout
+        android:id="@+id/frLayout"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectedImg">
+
+        <ImageButton
+            android:id="@+id/imgBtnCamera"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom|right"
+            app:srcCompat="@drawable/ic_baseline_add_a_photo_24"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgSelectec"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/mainbg"
+            app:civ_border_color="@color/black"
+            app:civ_border_width="2dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+    </FrameLayout>
+
     <Button
         android:id="@+id/btnCustomDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go to Dialog Custom"
+        android:text="@string/go_to_dialog_custom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnBuiltInDialog" />
 
     <Button
         android:id="@+id/btnBuiltInDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
         android:text="go to built in dialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCustomDialog" />
+        app:layout_constraintTop_toBottomOf="@+id/frLayout" />
 
     <Button
-        android:id="@+id/btnSamplePermission"
+        android:id="@+id/btnCamera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:text="Camera"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnGallery"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBuiltInDialog" />
+        app:layout_constraintTop_toBottomOf="@+id/frLayout" />
+
+    <Button
+        android:id="@+id/btnGallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Gallery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCamera"
+        app:layout_constraintTop_toBottomOf="@+id/frLayout" />
+
+    <TextView
+        android:id="@+id/tvSelectedImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="Selected Image:"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
