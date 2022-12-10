@@ -35,7 +35,7 @@ class HomeActivity : AppCompatActivity() {
 
 
             )
-        //put value witch is productlist variable
+        //put value which is productlist variable
         adapter = ProductAdapter(productsList)
 
         //calling onClick here going from productAdapter
